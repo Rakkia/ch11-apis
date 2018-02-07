@@ -25,3 +25,9 @@ body <- content(response, "text")
 results <- fromJSON(body)
 cheri <- results$size
 # How many pokemon are in the cave habitat?
+base.url <-"http://pokeapi.co/api/v2/pokemon-habitat"
+response <- GET(base.url)
+body <- content(response, "text")
+results <- fromJSON(body)
+cave <- results$pokemon_species
+numofcave <- nrow(cave)
